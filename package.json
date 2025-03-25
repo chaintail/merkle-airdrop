@@ -1,4 +1,56 @@
 {
   "name": "merkle-airdrop",
-  "packageManager": "yarn@4.7.0"
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "account": "yarn hardhat:account",
+    "account:generate": "yarn workspace @merkle-airdrop/hardhat account:generate",
+    "account:import": "yarn workspace @merkle-airdrop/hardhat account:import",
+    "chain": "yarn hardhat:chain",
+    "compile": "yarn hardhat:compile",
+    "deploy": "yarn hardhat:deploy",
+    "fork": "yarn hardhat:fork",
+    "format": "yarn next:format && yarn hardhat:format",
+    "generate": "yarn account:generate",
+    "hardhat:account": "yarn workspace @merkle-airdrop/hardhat account",
+    "hardhat:chain": "yarn workspace @merkle-airdrop/hardhat chain",
+    "hardhat:check-types": "yarn workspace @merkle-airdrop/hardhat check-types",
+    "hardhat:compile": "yarn workspace @merkle-airdrop/hardhat compile",
+    "hardhat:deploy": "yarn workspace @merkle-airdrop/hardhat deploy",
+    "hardhat:flatten": "yarn workspace @merkle-airdrop/hardhat flatten",
+    "hardhat:fork": "yarn workspace @merkle-airdrop/hardhat fork",
+    "hardhat:format": "yarn workspace @merkle-airdrop/hardhat format",
+    "hardhat:generate": "yarn workspace @merkle-airdrop/hardhat generate",
+    "hardhat:hardhat-verify": "yarn workspace @merkle-airdrop/hardhat hardhat-verify",
+    "hardhat:lint": "yarn workspace @merkle-airdrop/hardhat lint",
+    "hardhat:lint-staged": "yarn workspace @merkle-airdrop/hardhat lint-staged",
+    "hardhat:test": "yarn workspace @merkle-airdrop/hardhat test",
+    "hardhat:verify": "yarn workspace @merkle-airdrop/hardhat verify",
+    "postinstall": "husky install",
+    "lint": "yarn nextjs:lint && yarn hardhat:lint",
+    "next:build": "yarn workspace @merkle-airdrop/nextjs build",
+    "next:check-types": "yarn workspace @merkle-airdrop/nextjs check-types",
+    "next:format": "yarn workspace @merkle-airdrop/nextjs format",
+    "next:lint": "yarn workspace @merkle-airdrop/nextjs lint",
+    "next:serve": "yarn workspace @merkle-airdrop/nextjs serve",
+    "precommit": "lint-staged",
+    "start": "yarn workspace @merkle-airdrop/nextjs dev",
+    "test": "yarn hardhat:test",
+    "vercel": "yarn workspace @merkle-airdrop/nextjs vercel",
+    "vercel:yolo": "yarn workspace @merkle-airdrop/nextjs vercel:yolo",
+    "verify": "yarn hardhat:verify"
+  },
+  "devDependencies": {
+    "husky": "~8.0.3",
+    "lint-staged": "~13.2.2"
+  },
+  "packageManager": "yarn@4.7.0",
+  "engines": {
+    "node": ">=20.11.0"
+  }
 }
