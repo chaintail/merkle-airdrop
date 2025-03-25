@@ -43,19 +43,22 @@ export const getSpecialEvent = (): EffectType | null => {
   }
 
   // Special birthdays (birthday)
-  const isK9TGE = today.getMonth() === 2 && today.getDate() === 7;
+  // const isTGE = today.getMonth() === 2 && today.getDate() === 7;
   const isSHIBBirthday =
     (today.getMonth() === 6 && today.getDate() === 31) ||
     (today.getMonth() === 7 && today.getDate() === 1);
   const isShibariumBirthday = today.getMonth() === 7 && today.getDate() === 5;
-  const isK9PlatformBirthday =
-    today.getMonth() === 8 && today.getDate() >= 11 && today.getDate() <= 18;
+  // const isPlatformBirthday =
+  //   today.getMonth() === 8 && today.getDate() >= 11 && today.getDate() <= 18;
 
   if (
-    isK9TGE ||
-    isSHIBBirthday ||
-    isShibariumBirthday ||
-    isK9PlatformBirthday
+    (today.getMonth() === 3 && today.getDate() === 1) // april fools day
+    || (today.getMonth() === 3 && today.getDate() === 20) // 4-20
+    || isSHIBBirthday
+    || isShibariumBirthday
+    // || isTGE
+    // || isPlatformBirthday
+
   ) {
     return 'birthday';
   }

@@ -10,9 +10,6 @@
                 "instanceLimit": 1
             },
             "problemMatcher": [],
-            "options": {
-                "cwd": "${workspaceFolder:🟡🟡🟡 📦 Main Repo}"
-            },
             "presentation": {
                 "reveal": "always",
                 "panel": "dedicated",
@@ -33,9 +30,6 @@
             "type": "shell",
             "command": "yarn deploy",
             "problemMatcher": [],
-            "options": {
-                "cwd": "${workspaceFolder:🟡🟡🟡 📦 Main Repo}"
-            },
             "presentation": {
                 "reveal": "always",
                 "panel": "shared",
@@ -52,9 +46,6 @@
             },
             "type": "shell",
             "problemMatcher": [],
-            "options": {
-                "cwd": "${workspaceFolder:🟡🟡🟡 📦 Main Repo}"
-            },
             "presentation": {
                 "reveal": "always",
                 "panel": "shared",

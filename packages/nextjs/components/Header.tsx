@@ -22,16 +22,8 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
-    label: "K9 Quest",
+    label: "My Awesome Airdrop",
     href: "/evnt-fi",
-  },
-  {
-    label: "K9 Quest 2",
-    href: "/evnt-fi2",
-  },
-  {
-    label: "K9 Quest 3",
-    href: "/evnt-fi3",
   },
   {
     label: "Debug Contracts",
