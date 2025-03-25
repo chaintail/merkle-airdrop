@@ -22,7 +22,7 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
-    label: "My Awesome Airdrop",
+    label: "Quest",
     href: "/evnt-fi",
   },
   {

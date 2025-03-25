@@ -1,4 +1,7 @@
+"use client";
+
 import { useState, useEffect, memo, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import FallingParticle, {
   FallingItem,
   createSnowflake,
@@ -13,7 +16,6 @@ import FallingParticle, {
 } from './falling-particle';
 import EffectFab from './effect-fab';
 import { getSpecialEvent } from './getSpecialEvents';
-import { useRouter } from 'next/router';
 
 export const EFFECT_TYPES = [
   'snow',
@@ -94,7 +96,7 @@ const EffectToggleComponent: React.FC<EffectToggleProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(true);
   const [fallingItems, setFallingItems] = useState<FallingItem[]>([]);
-  const { query } = useRouter();
+  const searchParams = useSearchParams();
 
   // Memoize the special event check
   const specialEventEffect = useMemo(() => {
@@ -106,21 +108,21 @@ const EffectToggleComponent: React.FC<EffectToggleProps> = ({
   // Memoize effect type calculation
   const effectType = useMemo(() => {
     console.debug(
-      `UPDATE effectType props.effect: ${effect}, query.effect: ${query.effect}, specialEvent: ${specialEventEffect}`,
+      `UPDATE effectType props.effect: ${effect}, query.effect: ${searchParams.get('effect')}, specialEvent: ${specialEventEffect}`,
     );
     if (effect === 'off') {
       return null;
     } else if (effect) {
       return effect;
     }
-    const queryEffect = query.effect as EffectType | undefined | 'off';
+    const queryEffect = searchParams.get('effect') as EffectType | 'off' | null;
     if (queryEffect === 'off') {
       return null;
-    } else if (queryEffect && EFFECT_TYPES.includes(queryEffect)) {
-      return queryEffect;
+    } else if (queryEffect && EFFECT_TYPES.includes(queryEffect as EffectType)) {
+      return queryEffect as EffectType;
     }
     return specialEventEffect;
-  }, [effect, query.effect, specialEventEffect]);
+  }, [effect, searchParams, specialEventEffect]);
 
   // Memoize number of items based on effect type
   const numberOfItems = useMemo(() => {
