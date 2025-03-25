@@ -1,4 +1,4 @@
-import { EffectType } from 'shared/components/layout/effect-toggle/effect-toggle';
+import { EffectType } from "./FallingParticles";
 
 // Move special events calculations outside component
 export const getSpecialEvent = (): EffectType | null => {
