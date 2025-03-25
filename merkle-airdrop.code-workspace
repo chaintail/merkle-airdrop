@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"name": "🟡🟡🟡 📦 Main Repo",
+			"path": "."
+		},
+		{
+			"name": "🔵🔵🔵 📃 Contracts",
+			"path": "packages/hardhat"
+		},
+		{
+			"name": "🔴🔴🔴 🏗️ Frontend",
+			"path": "packages/nextjs"
+		},
+	],
+	"settings": {
+		"terminal.integrated.cwd": "${workspaceFolder:🟡🟡🟡 📦 Main Repo}",
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#b11349",
+			"activityBar.background": "#b11349",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#47ad13",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#b11349",
+			"statusBar.background": "#830e36",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#b11349",
+			"statusBarItem.remoteBackground": "#830e36",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"titleBar.activeBackground": "#830e36",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#830e3699",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.remoteColor": "#830e36"
+	},
+}
