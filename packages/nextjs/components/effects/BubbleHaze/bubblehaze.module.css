@@ -1,0 +1,30 @@
+.bubble {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(30px);
+}
+
+.container-a {
+  animation: floatA 20s ease-in-out infinite;
+}
+
+.container-b {
+  animation: floatB 15s ease-in-out infinite;
+}
+
+.g1 { background: radial-gradient(circle at 30% 30%, rgba(147, 197, 253, 0.4) 0%, rgba(147, 197, 253, 0) 70%); }
+.g2 { background: radial-gradient(circle at 30% 30%, rgba(167, 139, 250, 0.4) 0%, rgba(167, 139, 250, 0) 70%); }
+.g3 { background: radial-gradient(circle at 30% 30%, rgba(196, 181, 253, 0.4) 0%, rgba(196, 181, 253, 0) 70%); }
+.g4 { background: radial-gradient(circle at 30% 30%, rgba(129, 140, 248, 0.4) 0%, rgba(129, 140, 248, 0) 70%); }
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(-10%) translateX(-5%); }
+  50% { transform: translateY(10%) translateX(5%); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(10%) translateX(5%); }
+  50% { transform: translateY(-10%) translateX(-5%); }
+} 
