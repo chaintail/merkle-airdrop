@@ -2042,6 +2042,7 @@ __metadata:
     "@tanstack/react-query": "npm:~5.59.15"
     "@trivago/prettier-plugin-sort-imports": "npm:~4.3.0"
     "@types/node": "npm:^20"
+    "@types/papaparse": "npm:^5"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     "@typescript-eslint/eslint-plugin": "npm:~5.40.0"
@@ -2063,10 +2064,13 @@ __metadata:
     eslint-config-next: "npm:15.2.4"
     eslint-config-prettier: "npm:~8.10.0"
     eslint-plugin-prettier: "npm:~5.2.1"
+    keccak256: "npm:^1.0.6"
     lucide-react: "npm:^0.484.0"
+    merkletreejs: "npm:^0.5.1"
     next: "npm:15.2.4"
     next-nprogress-bar: "npm:~2.3.13"
     next-themes: "npm:~0.3.0"
+    papaparse: "npm:^5.5.2"
     postcss: "npm:^8.4.49"
     postcss-import: "npm:^16.1.0"
     prettier: "npm:~3.3.3"
@@ -2075,6 +2079,7 @@ __metadata:
     react-copy-to-clipboard: "npm:~5.1.0"
     react-dom: "npm:^19.0.0"
     react-hot-toast: "npm:~2.4.0"
+    react-icons: "npm:^5.5.0"
     tailwind-merge: "npm:^3.0.2"
     tailwindcss: "npm:^4"
     tailwindcss-animate: "npm:^1.0.7"
@@ -4351,6 +4356,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/papaparse@npm:^5":
+  version: 5.3.15
+  resolution: "@types/papaparse@npm:5.3.15"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/9333e980b9ed4102f80b1791b6dfefb23fb4d27252b2b6ee6084b2cd847cbe802cfb838d46b4f6b4cb035f9225e0323034c956ee21bbcbcb4cbdb663302d5eeb
+  languageName: node
+  linkType: hard
+
 "@types/pbkdf2@npm:^3.0.0":
   version: 3.1.2
   resolution: "@types/pbkdf2@npm:3.1.2"
@@ -6554,6 +6568,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer-reverse@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "buffer-reverse@npm:1.0.1"
+  checksum: 10c0/72f05072a72dc1ec0574693b8358e6d3882abe8d0a7daa875ed145b360d68ea3b95eb1b5fd435bf1f38a80d85021ecdf670bbb57694926cc1a02ea56cbbf4468
+  languageName: node
+  linkType: hard
+
 "buffer-xor@npm:^1.0.3":
   version: 1.0.3
   resolution: "buffer-xor@npm:1.0.3"
@@ -7287,6 +7308,13 @@ __metadata:
   version: 1.2.7
   resolution: "crypto-es@npm:1.2.7"
   checksum: 10c0/03b2c488e159255b6ebc8d6a41fd41bb5d54d821821f6cfba7f9b4d603403cbccca567af89a91e9da1d95049131d9d25b30427b3e1cd90df83575924af09bdf3
+  languageName: node
+  linkType: hard
+
+"crypto-js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "crypto-js@npm:4.2.0"
+  checksum: 10c0/8fbdf9d56f47aea0794ab87b0eb9833baf80b01a7c5c1b0edc7faf25f662fb69ab18dc2199e2afcac54670ff0cd9607a9045a3f7a80336cccd18d77a55b9fdf0
   languageName: node
   linkType: hard
 
@@ -11185,6 +11213,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"keccak256@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "keccak256@npm:1.0.6"
+  dependencies:
+    bn.js: "npm:^5.2.0"
+    buffer: "npm:^6.0.3"
+    keccak: "npm:^3.0.2"
+  checksum: 10c0/2a3f1e281ffd65bcbbae2ee8d62e27f0336efe6f16b7ed9932ad642ed398da62ccbc3d38dcdf43bd2fad9885f02df501dc77a900c358644df296396ed194056f
+  languageName: node
+  linkType: hard
+
 "keccak@npm:^3.0.0, keccak@npm:^3.0.2, keccak@npm:^3.0.3":
   version: 3.0.4
   resolution: "keccak@npm:3.0.4"
@@ -11742,6 +11781,17 @@ __metadata:
     lint-staged: "npm:~13.2.2"
   languageName: unknown
   linkType: soft
+
+"merkletreejs@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "merkletreejs@npm:0.5.1"
+  dependencies:
+    buffer-reverse: "npm:^1.0.1"
+    crypto-js: "npm:^4.2.0"
+    treeify: "npm:^1.1.0"
+  checksum: 10c0/2c103b718e8dfbc5c4bed895a2e9dda57e043f37ea02680db9481d01e64bc39f89d8cccef536f58b0544194574efd7e611bb255b05db1079a5e0a61cb8e4726f
+  languageName: node
+  linkType: hard
 
 "micro-ftch@npm:^0.3.1":
   version: 0.3.1
@@ -12808,6 +12858,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"papaparse@npm:^5.5.2":
+  version: 5.5.2
+  resolution: "papaparse@npm:5.5.2"
+  checksum: 10c0/83b8c0cf570395581a42331cd9231194dbba43bc8c608026739f5180827506575993dc788def039a9666bc103e2a96075de8732ea8a63e507b74c02aa757bcd5
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -13417,6 +13474,15 @@ __metadata:
     react: ">=16"
     react-dom: ">=16"
   checksum: 10c0/591ecec3c6adc1cdb70f00165a57baa3d7f75d0d30fa767213c36496bdcc6be2b2e6a3edbf7c04f7d726a1b17dcfb5e7feb2136b04b17c9ccb769894b970f365
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "react-icons@npm:5.5.0"
+  peerDependencies:
+    react: "*"
+  checksum: 10c0/a24309bfc993c19cbcbfc928157e53a137851822779977b9588f6dd41ffc4d11ebc98b447f4039b0d309a858f0a42980f6bfb4477fb19f9f2d1bc2e190fcf79c
   languageName: node
   linkType: hard
 
@@ -15211,6 +15277,13 @@ __metadata:
   bin:
     tree-kill: cli.js
   checksum: 10c0/7b1b7c7f17608a8f8d20a162e7957ac1ef6cd1636db1aba92f4e072dc31818c2ff0efac1e3d91064ede67ed5dc57c565420531a8134090a12ac10cf792ab14d2
+  languageName: node
+  linkType: hard
+
+"treeify@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "treeify@npm:1.1.0"
+  checksum: 10c0/2f0dea9e89328b8a42296a3963d341ab19897a05b723d6b0bced6b28701a340d2a7b03241aef807844198e46009aaf3755139274eb082cfce6fdc1935cbd69dd
   languageName: node
   linkType: hard
 

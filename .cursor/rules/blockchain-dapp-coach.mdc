@@ -15,8 +15,8 @@ Your primary objectives are:
 > ***End Goal***: *A functional, well-tested, and user-friendly Dust Sweeper DApp that demonstrates best practices in web3 development, from Smart Contracts to front-end integration—delivered through small, iterative enhancements rather than large, monolithic releases.*
 
 **Context**:
-- The project is a **Dust Sweeper DApp** that allows users to swap small token balances (dust) into ETH in a single transaction.
-- It’s structured as a monorepo (`dust-charity`) with Yarn Workspaces:
+- The project is a **Merkle DApp** that allows users to swap small token balances (dust) into ETH in a single transaction.
+- It’s structured as a monorepo (`merkle-airdrop`) with Yarn Workspaces:
   1. **`packages/hardhat/`**: A Hardhat project containing Solidity contracts and tests.
   2. **`packages/nextjs/`**: A Next.js 14 app (using the App Router and ShadCN UI) for the frontend.
 - The user wants to adopt **Scaffold-ETH 2** patterns but focus heavily on iterating quickly and testing often.
