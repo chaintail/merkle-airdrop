@@ -17,24 +17,32 @@ import { MultiSolcUserConfig, SolcUserConfig, SolidityUserConfig } from "hardhat
 // If not set, it uses ours Alchemy's default API key.
 // You can get your own at https://dashboard.alchemyapi.io
 const providerApiKey = process.env.INFURA_API_KEY || process.env.ALCHEMY_API_KEY || "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
+
 // If not set, it uses the hardhat account 0 private key.
 // You can generate a random account with `yarn generate` or `yarn account:import` to import your existing PK
 const deployerPrivateKey =
   process.env.__RUNTIME_DEPLOYER_PRIVATE_KEY ??
   process.env.PRIVATE_KEY ??
   "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
+
 // If not set, it uses our block explorers default API keys.
 const etherscanApiKey = process.env.ETHERSCAN_MAINNET_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 const etherscanOptimisticApiKey = process.env.ETHERSCAN_OPTIMISTIC_API_KEY || "RM62RDISS1RH448ZY379NX625ASG1N633R";
 const basescanApiKey = process.env.BASESCAN_API_KEY || "ZZZEIPMT1MNJ8526VV2Y744CA7TNZR64G6";
 
-const GAS_REPORT = !!process.env.GAS_REPORT;
-const SHIBARIUM_RPC_URL = process.env.SHIBARIUM_RPC_URL || "https://www.shibrpc.com";
-const PUPPYNET_RPC_URL = process.env.PUPPYNET_RPC_URL || "https://puppynet.shibrpc.com";
-const MAINNET_FORKING_ENABLED = process.env.MAINNET_FORKING_ENABLED === "true";
-const USE_INFURA = process.env.USE_INFURA || "true";
-
 const configOverride: HardhatUserConfig = {
+  namedAccounts: {
+    deployer: {
+      default: 0, // Account index 0 on all networks
+      // sepolia: 1, // Account index 1 on Sepolia
+    },
+    // admin: {
+    //   default: 1,
+    // },
+    treasury: {
+      default: "0xE1001DbDc69C961F98ac6063C17967987aCd5a65",
+    },
+  },
   solidity: {
     compilers: [
       {
@@ -44,7 +52,6 @@ const configOverride: HardhatUserConfig = {
             enabled: true,
             runs: 200,
           },
-          evmVersion: "paris",
         },
       },
       {
@@ -93,38 +100,34 @@ const configOverride: HardhatUserConfig = {
     // If the network you are looking for is not here you can add new network settings
     hardhat: {
       forking: {
-        url: SHIBARIUM_RPC_URL,
-        enabled: MAINNET_FORKING_ENABLED,
+        url: process.env.BASE_SEPOLIA_RPC_URL!,
+        enabled: process.env.MAINNET_FORKING_ENABLED === "true",
         // blockNumber: 6967613,
       },
       mining: {
-        auto: false,
-        // interval: 1000,
+        // auto: true,
+        interval: 1000, // mine every second automatically
       },
       // chainId: 109,
     },
     mainnet: {
-      url:
-        USE_INFURA === "true"
-          ? `https://mainnet.infura.io/v3/${providerApiKey}`
-          : `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
+      url: process.env.ETHEREUM_RPC_URL || `https://eth.meowrpc.com`,
       chainId: 1,
       gasPrice: 30000000000,
       accounts: [deployerPrivateKey],
     },
     sepolia: {
-      url:
-        USE_INFURA === "true"
-          ? `https://sepolia.infura.io/v3/${providerApiKey}`
-          : `https://eth-sepolia.alchemyapi.io/v2/${providerApiKey}`,
+      url: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com",
       chainId: 11155111,
       gasPrice: 1000000000,
-      accounts: [deployerPrivateKey],
+      // accounts: [deployerPrivateKey],
+      accounts: [process.env.ADMIN_PRIVATE_KEY_TESTNET!],
     },
     base: {
-      url: "https://mainnet.base.org",
+      url: process.env.BASE_RPC_URL || "https://mainnet.base.org",
       chainId: 8453,
-      accounts: [deployerPrivateKey],
+      accounts: [process.env.ADMIN_PRIVATE_KEY!],
+      // accounts: [deployerPrivateKey],
       verify: {
         etherscan: {
           apiUrl: "https://api.basescan.org",
@@ -133,7 +136,7 @@ const configOverride: HardhatUserConfig = {
       },
     },
     baseSepolia: {
-      url: "https://sepolia.base.org",
+      url: process.env.BASE_SEPOLIA_RPC_URL || "https://sepolia.base.org",
       chainId: 84532,
       accounts: [deployerPrivateKey],
       verify: {
@@ -144,13 +147,13 @@ const configOverride: HardhatUserConfig = {
       },
     },
     shibarium: {
-      url: "https://www.shibrpc.com",
+      url: process.env.SHIBARIUM_RPC_URL || "https://www.shibrpc.com",
       chainId: 109,
       gasPrice: 1000000000,
       accounts: [deployerPrivateKey],
     },
     puppynet: {
-      url: "https://puppynet.shibrpc.com",
+      url: process.env.PUPPYNET_RPC_URL || "https://puppynet.shibrpc.com",
       chainId: 157,
       gasPrice: 1000000000,
       accounts: [deployerPrivateKey],
@@ -176,6 +179,7 @@ const configOverride: HardhatUserConfig = {
         },
       },
     ],
+    enabled: false,
   },
   typechain: {
     // adds `contractName` to the generated types
@@ -190,7 +194,7 @@ const configOverride: HardhatUserConfig = {
   gasReporter: {
     currency: "USD",
     gasPrice: 1,
-    enabled: GAS_REPORT,
+    enabled: !!process.env.GAS_REPORT,
   },
 };
 
