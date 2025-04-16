@@ -88,5 +88,3 @@ yarn -v
 # Use yarn v4.7.0
 yarn init -2
 ```
-
-
